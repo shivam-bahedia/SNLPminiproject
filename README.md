@@ -1,5 +1,5 @@
 # SNLPminiproject
 SNLP mini project 2019-20
 
-![alt text](http://url/to/img.png)
+![alt text](https://github.com/shivam-bahedia/SNLPminiproject/blob/master/figure/FactChecker.png)
 
