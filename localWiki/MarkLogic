@@ -1,0 +1,45 @@
+
+Type Private
+Industry Software
+Founded 2001
+Headquarters San Carlos, California
+Key people Gary Bloom, CEO Christopher Lindblad, co-founder
+Products MarkLogic licenses, support, and consulting services
+Website www.marklogic.com
+MarkLogic Corporation is an American software business that develops and provides an enterprise NoSQL database, also named MarkLogic. The company was founded in 2001 and is based in San Carlos, California. MarkLogic is a privately held company with over 500 employees[citation needed] and has offices in the United States, Europe, Asia, and Australia.
+The company claims to have over 1,000 customers, including Chevron, JPMorgan Chase, Erie Insurance Group, Johnson & Johnson, and the US Army.[1] Also, six of the top ten global banks are MarkLogic customers.[citation needed]
+In 2016 Forrester Research ranked MarkLogic as one of the nine leading NoSQL database vendors in the market,[2] and appeared in several Gartner Magic Quadrant reports for Operational Database Management Systems.[3] In 2017, Gartner ranked MarkLogic as a 'Visionary' in the data warehouse market.[4]
+MarkLogic was first named Cerisent and was founded in 2001[5] by Christopher Lindblad,[6] who was the Chief Architect of the Ultraseek search engine at Infoseek, and Paul Pedersen, a professor of computer science at Cornell University and UCLA, and Frank R. Caufield,[7] Founder of Darwin Ventures,[8] to address shortcomings with existing search and data products. The product first focused on using XML document markup standard and XQuery as the query standard for accessing collections of documents up to hundreds of terabytes in size.
+In 2009 IDC mentioned MarkLogic in a report as one of the top Innovative Information Access Companies with under $100 million in revenue.[9]
+In May 2012, Gary Bloom was appointed as Chief Executive Officer.[10] He held senior positions at Symantec Corporation, Veritas Software, and Oracle.[11]
+MarkLogic obtained its first financing of $6 million in 2002 led by Sequoia Capital, followed by a $12 million investment in June 2004, this time led by Lehman Brothers Venture Partners.[12] The company received additional funding of $15 million in 2007 from its existing investors Sequoia and Lehman.[12] The same investors put another $12.5 million into the company in 2009.[13]
+On 12 April 2013, MarkLogic received an additional $25 million in funding, led by Sequoia Capital and Tenaya Capital.[14][15] On May 12, 2015, MarkLogic received an additional $102 million in funding, led by Wellington Management Company, with contributions from Arrowpoint Partners and existing backers, Sequoia Capital, Tenaya Capital, and Northgate Capital. This brought the company's total funding to $173 Million and gave MarkLogic a pre-money valuation of $1 billion.[16]
+NTT Data announced a strategic investment in MarkLogic on 31 May 2017.[17]
+The MarkLogic product is considered a multi-model NoSQL database for its ability to store, manage, and search JSON and XML documents and semantic data (RDF triples).
+2001—Cerisent XQE 1.0
+2004—Cerisent XQE 2.0
+2005—MarkLogic Server 3.0
+2006—MarkLogic Server 3.1
+2007—MarkLogic Server 3.2
+2008—MarkLogic Server 4.0
+2009—MarkLogic Server 4.1
+2010—MarkLogic Server 4.2
+2011—MarkLogic Server 5.0
+2012—MarkLogic Server 6.0
+2013—MarkLogic Server 7.0
+2015—MarkLogic Server 8.0: Ability to store JSON data and process data using JavaScript.[18]
+2017—MarkLogic Server 9.0: Data integration across Relational and Non-Relational data.
+MarkLogic is proprietary software, available under a freeware developer software license or a commercial "Essential Enterprise" license.[19] Licenses are available from MarkLogic or directly from cloud marketplaces such as Amazon Web Services and Microsoft Azure.
+MarkLogic is a multi-model NoSQL database that has evolved from its XML database roots to also natively store JSON documents and RDF triples for its semantic data model. It uses a distributed architecture that can handle hundreds of billions of documents and hundreds of terabytes of data.[citation needed] MarkLogic maintains ACID consistency for transactions and has a Common Criteria certification security model, high availability and disaster recovery. It is designed to run on-premises within public or private cloud computing environments like Amazon Web Services.[20]
+MarkLogic's Enterprise NoSQL database platform is used in publishing, government, finance and other sectors, with hundreds of large-scale systems in production.[20]
+Document database
+Graph database
+Multi-model database
+NoSQL
+Triple store
+MongoDB
+Fowler, Adam. "NoSQL for Dummies". ISBN 1118905628, 9781118905623.
+Taylor, Allen. "Semantics for Dummies". ISBN 9781119112204.
+Hunter, Jason. "Inside MarkLogic Server"
+McCreary, Dan, and Ann Kelly. Making Sense of NoSQL. Manning Publications Co. August 2012. ISBN 9781617291074.
+Zhang, Andy. Beginning MarkLogic with XQuery and MarkLogic Server. Champion Writers, Inc. 24 June 2009. ISBN 1608300153.
