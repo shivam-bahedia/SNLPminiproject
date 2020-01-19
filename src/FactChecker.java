@@ -39,7 +39,7 @@ public class FactChecker
 		try {
 			FileUtils.writeStringToFile(new File(trainResultFile), result, "UTF-8");
 		} catch (IOException e1) {
-			// TODO Auto-generated catch block
+			
 			System.out.println("An error occured while saving result file");
 		}
 		
@@ -72,7 +72,7 @@ public class FactChecker
 		try {
 			FileUtils.writeStringToFile(new File(testResultFile), result, "UTF-8");
 		} catch (IOException e1) {
-			// TODO Auto-generated catch block
+			
 			System.out.println("An error occured while saving result file");
 		}
 		
@@ -91,7 +91,7 @@ public class FactChecker
 			}
 			
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
+			
 			System.out.println("An error occured while reading facts file");
 		}
  		
@@ -191,7 +191,7 @@ public class FactChecker
 		String[]  prepositions	 =	{  "den",  "for", "del",  "in", "of", "the","das", "las",
 				"de", "van", "von", "der","du", "a", "and", "or", "with", "&", "at", "on",	"to", "into", "from"};
 		List<String> prepoList = Arrays.asList(prepositions);
-		//System.out.println(prepoList.contains(word));
+		
 		
 		return prepoList.contains(word);
 	}

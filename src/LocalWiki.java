@@ -36,7 +36,7 @@ public class LocalWiki {
 				for (Element e : set)
 				{
 					pageData += e.text() + "\n";
-					//System.out.println(e.text() + "9999999999999999999999999999");
+					
 				}
 				
 				LocalWiki.add(token,pageData);
@@ -72,7 +72,7 @@ public class LocalWiki {
 			FileUtils.writeStringToFile(new File(DIR + token), pageData, "UTF-8");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
-			System.out.println("An error occured while adding fact to local store");
+			System.out.println("An error occured while adding fact to local store, skipping and continuing with next fact");
 		}
 	}
 	
