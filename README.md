@@ -44,5 +44,7 @@
 <li>Search Data:<br />token2 not found in the wiki page of token1 with predicate<br />token1 not found in the wiki page of token2 with predicate</li>
 <li>return truthValue =false for this fact.</li>
 </ol>
+<h2>Execution Steps</h2>
+Directly execute the Main Class.
 <h2><strong>Team Member&nbsp;</strong></h2>
 <p>Shivam Bahedia, Sourabh Poddar, Yamini Punetha</p>
