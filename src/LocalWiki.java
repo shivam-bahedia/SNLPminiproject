@@ -9,7 +9,7 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 public class LocalWiki {
-	private static final String DIR = "localWiki/";
+	private static final String DIR = "localStore/";
 	private static final String URL = "https://en.wikipedia.org/w/index.php?search=";
 	private static final String[] X = { ".mw-parser-output > p", ".mw-parser-output > ul li", ".infobox.vcard tr",
 	".mw-parser-output .multicol > tbody li" };
@@ -30,7 +30,7 @@ public class LocalWiki {
 		{
 			try {
 				Document document = Jsoup.connect(URL+URLEncoder.encode(token, "UTF8")).get();
-				Elements set = document.select(X[0] + ", " + X[1] + ", " + X[2] + ", " + X[3]);
+				Elements set = document.select(".mw-parser-output > p,.mw-parser-output > ul li,.infobox.vcard tr,.mw-parser-output .multicol > tbody li");
 				
 
 				for (Element e : set)
@@ -43,7 +43,7 @@ public class LocalWiki {
 				
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
-				e.printStackTrace();
+				System.out.println("An error occured while fetching a fact, skipping and continuing with next fact");
 			}
 			
 			
@@ -61,7 +61,7 @@ public class LocalWiki {
 			return FileUtils.readFileToString(new File(DIR + token), "UTF-8");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println("An error occured while fetching a fact, skipping and continuing with next fact");
 		}
 		return "";
 	}
@@ -72,7 +72,7 @@ public class LocalWiki {
 			FileUtils.writeStringToFile(new File(DIR + token), pageData, "UTF-8");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println("An error occured while adding fact to local store");
 		}
 	}
 	

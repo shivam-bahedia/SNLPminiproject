@@ -40,7 +40,7 @@ public class FactChecker
 			FileUtils.writeStringToFile(new File(trainResultFile), result, "UTF-8");
 		} catch (IOException e1) {
 			// TODO Auto-generated catch block
-			e1.printStackTrace();
+			System.out.println("An error occured while saving result file");
 		}
 		
 		
@@ -50,8 +50,31 @@ public class FactChecker
 		
 	}
 	
-	public void checkFacts(String File, String resultFile, LocalWiki LW)
+	public void checkFacts(String testFile, String testResultFile, LocalWiki LW)
 	{
+		HashMap<String,String> facts = readFile(testFile);
+		String result = "";
+		for (Map.Entry<String, String> e : facts.entrySet())
+		{
+			
+			String fact = e.getValue();
+			boolean truth ;
+			List<String> facttokens = generateTokens(fact);  
+			truth = checkTruth(facttokens,fact);
+			
+			if (truth)
+				result += URL1 + e.getKey() + "> " + URL2 + " \"" + "1.0" + "\"" + URL3 + " .\n";
+			else	
+				result += URL1 + e.getKey() + "> " + URL2 + " \"" + "0.0" + "\"" + URL3 + " .\n";
+			
+		}
+		
+		try {
+			FileUtils.writeStringToFile(new File(testResultFile), result, "UTF-8");
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			System.out.println("An error occured while saving result file");
+		}
 		
 	}
 	
@@ -69,7 +92,7 @@ public class FactChecker
 			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println("An error occured while reading facts file");
 		}
  		
  		return factMap;
@@ -165,8 +188,8 @@ public class FactChecker
 	{
 		
 		
-		String[]  prepositions	 =	{ "van", "von", "der", "den", "das", "las", "for", "del", 
-				"de", "du", "the", "a", "at", "on",	"to", "in", "of", "and", "or", "with", "&", "into", "from"};
+		String[]  prepositions	 =	{  "den",  "for", "del",  "in", "of", "the","das", "las",
+				"de", "van", "von", "der","du", "a", "and", "or", "with", "&", "at", "on",	"to", "into", "from"};
 		List<String> prepoList = Arrays.asList(prepositions);
 		//System.out.println(prepoList.contains(word));
 		
@@ -176,33 +199,39 @@ public class FactChecker
 	private String getPredicate(String fact)
 	{
 		String filter = "";
-
-		if (fact.contains("birth place") || fact.contains("nascence place"))
-			filter = "(B|b)orn.{0,150}";
-
-		if (fact.contains("death place") || fact.contains("last place"))
-			filter = "(Died).{0,150}";
-
-		if (fact.contains("innovation") || fact.contains("foundation"))
-			filter = "(((R|r)esidence)|((H|h)eadquarters)|((F|f)ounded)|((O|o)ffice)).{0,150}";
-
-		if (fact.contains("author"))
-			filter = "(A|a)uthor.{0,150}";
-
-		if (fact.contains("award"))
-			filter = "(A|a)ward.{0,150}";
-
-		if (fact.contains("spouse") || fact.contains("better half"))
-			filter = "(S|s)pouse.{0,150}";
-
-		if (fact.contains("subordinate") || fact.contains("subsidiary") || fact.contains("office")
-				|| fact.contains("team") || fact.contains("squad")) {
-			filter = "\\b(?<!((((B|b)orn)|((D|d)ied)|((A|a)ward)|((S|s)pouse)|((A|a)uthor)|((S|s)tarring)|((F|f)ounded)|((H|h)eadquarters)|star|act).{0,150}))";
-		}
-
-		if (fact.contains("stars") || fact.contains("role")) {
-			filter = "\\b(?<!((((B|b)orn)|((D|d)ied)|((A|a)ward)|((S|s)pouse)|((A|a)uthor)|((F|f)ounded)|((H|h)eadquarters)).{0,150}))";
-		}
+		String[] born = {"birth place","nascence place"};
+		String[] death = {"death place","last place"};
+		String[] foundation = {"innovation","foundation"};
+		String[] author = {"author"};
+		String[] award = {"award"};
+		String[] spouse = {"spouse","better half"};
+		String[] team = {"subordinate","subsidiary","office","team","squad"};
+		String[] star = {"stars","role"};
+		
+		for (String b : born)
+			if(fact.contains(b))
+				filter = "(B|b)orn.{0,150}";
+		for (String d : death)
+			if(fact.contains(d))
+				filter = "(Died).{0,150}";
+		for (String f : foundation)
+			if(fact.contains(f))
+				filter = "(((R|r)esidence)|((H|h)eadquarters)|((F|f)ounded)|((O|o)ffice)).{0,150}";
+		for (String a : author)
+			if(fact.contains(a))
+				filter = "(A|a)uthor.{0,150}";
+		for (String aw : award)
+			if(fact.contains(aw))
+				filter = "(A|a)ward.{0,150}";
+		for (String s : spouse)
+			if(fact.contains(s))
+				filter = "(S|s)pouse.{0,150}";
+		for (String t : team)
+			if(fact.contains(t))
+				filter = "\\b(?<!((((B|b)orn)|((D|d)ied)|((A|a)ward)|((S|s)pouse)|((A|a)uthor)|((S|s)tarring)|((F|f)ounded)|((H|h)eadquarters)|star|act).{0,150}))";
+		for (String s : star)
+			if(fact.contains(s))
+				filter = "\\b(?<!((((B|b)orn)|((D|d)ied)|((A|a)ward)|((S|s)pouse)|((A|a)uthor)|((F|f)ounded)|((H|h)eadquarters)).{0,150}))";
 
 		return filter + "(?i)";
 	}

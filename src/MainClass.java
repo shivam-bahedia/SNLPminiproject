@@ -11,9 +11,9 @@ public class MainClass {
 		String trainResultFile = "trainresult.ttl";
 		String testResultFile = "testresult.ttl";
 		
-		FactChecker	fc = new FactChecker(testFile,testResultFile,LW);
-		//fc.checkFacts(testFile,testResultFile,LW);
-		//fc.checkFacts(testFile, testResultFile, LW);
+		FactChecker	fc = new FactChecker(trainFile,trainResultFile,LW);
+		fc.checkFacts(testFile,testResultFile,LW);
+		
 				
 	}
 
